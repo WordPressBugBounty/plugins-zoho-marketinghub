@@ -939,7 +939,12 @@ class ZohoMarketingHub_Admin {
 							}
 							else if(isset($new_response_body['account_status']) && $new_response_body['account_status'] == 0 )
 							{
-								self::zmhub_integration_disconnect();
+								//self::zmhub_integration_disconnect();
+								delete_option('zmhub_store_stats');
+								delete_option('zmhub_integration');
+								delete_option('zmhub_intergration_details');
+								delete_option('zmhub_error_msg');
+								delete_option('zmhub_optin_setting');
 								wp_safe_redirect(get_admin_url('') ."admin.php?page=mh-wc");
 										exit();
 							}
@@ -1110,7 +1115,12 @@ class ZohoMarketingHub_Admin {
 							$new_response_body = json_decode($new_response['body'],true);
 							if($new_response_body['account_status'] && $new_response_body['account_status'] == 0 )
 							{
-								self::zmhub_integration_disconnect();
+								//self::zmhub_integration_disconnect();
+								delete_option('zmhub_store_stats');
+								delete_option('zmhub_integration');
+								delete_option('zmhub_intergration_details');
+								delete_option('zmhub_error_msg');
+								delete_option('zmhub_optin_setting');
 								wp_safe_redirect(get_admin_url('') ."admin.php?page=mh-wc");
 											exit();
 							}

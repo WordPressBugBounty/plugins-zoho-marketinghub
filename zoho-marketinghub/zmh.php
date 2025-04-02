@@ -2,7 +2,7 @@
 /*
    Plugin Name:Zoho Marketing Automation
    Plugin URI:https://help.zoho.com/portal/en/kb/marketing-automation/user-guide/settings/integrations/articles/marketingautomation-plugin-for-wordpress
-   Version:1.3.2
+   Version:1.3.3
    Author:Zoho Marketing Automation
    Author URI:https://zoho.com/marketingautomation
    Description:With the Zoho Marketing Automation plugin, track visitor behavior, embed signup forms, and leverage the new eCommerce integration to drive conversions.
@@ -27,7 +27,7 @@
 // Prevent direct accesss
 defined( 'ABSPATH' ) or exit;
 
-define( 'ZMHUB_VERSION', '1.3.2' );
+define( 'ZMHUB_VERSION', '1.3.3' );
 define( 'ZMHUB__MINIMUM_WP_VERSION', '5.0' );
 define( 'ZMHUB__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'ZMHUB__ACCOUNTS_URL', 'https://accounts.zoho.' );
