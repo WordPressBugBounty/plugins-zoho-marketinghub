@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . wp_create_nonce( 'mh-ajax-nonce' ) . '" />';
+echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . esc_html(wp_create_nonce( 'mh-ajax-nonce' )) . '" />';
 ?>
 <div class="zmhpopupgen" id="mh_disconnect_popup" style="display: none;">
     <div class="">
@@ -17,9 +17,9 @@ echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . wp
 	<div class="zmhaccoutname">
 	    <div class="zmhaccoutright">
 		    <div class="zmhaccname">
-			    <span class="email"><?php echo esc_attr(get_option("zmhub_user_email")); ?></span> 
+			    <span class="email"><?php echo esc_attr(get_option("zmhub_user_email")); ?></span>
 			    <?php $time = intval(get_option('zmhub_connect_time'));?>
-			    <span class="timedate"> Connected On <?php echo get_date_from_gmt(date('Y-m-d H:i:s' , $time), get_option('date_format') .' '. get_option('time_format') ); ?></span>
+			    <span class="timedate"> Connected On <?php echo esc_html(get_date_from_gmt(date('Y-m-d H:i:s' , $time), get_option('date_format') .' '. get_option('time_format') )); ?></span>
 		    </div>
 	    	<input type="submit" id="mh-disconnect" value="Disconnect Account">
 	    </div>
@@ -31,15 +31,21 @@ echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . wp
 	    <div class="zmhauthenticatecont">
 	    	<div class="zmhauthenticatebox">
 	            <img src="<?php echo esc_url( plugins_url('../assets/images/zc-wa-empty.svg', __FILE__ ) ); ?>">
-	            <h1>Web Assistant</h1>
-	            <p>Get the Web Assistant tracking code from your Zoho Marketing Automation account to track your pages and posts.</p>
-	            <button class="zmhbtn zmhpri zmhmb35" onclick="window.location = 'admin.php?page=mh-wa'">Go To Web Assistant</button>
+	            <h1>Website Analytics</h1>
+	            <p>Get the Website Analytics tracking code from your Zoho Marketing Automation account to track your pages and posts.</p>
+	            <button class="zmhbtn zmhpri zmhmb35" onclick="window.location = 'admin.php?page=mh-wa'">Go To Website Analytics</button>
 	        </div>
 	        <div class="zmhauthenticatebox">
 	            <img src="<?php echo esc_url( plugins_url('../assets/images/zc-library-signup-form.svg', __FILE__ ) ); ?>">
 	            <h1>Signup Form</h1>
 	            <p>Bring your Zoho Marketing Automation's signup forms and embed them in your website using the forms' short code.</p>
 	            <button class="zmhbtn zmhpri zmhmb35" onclick="window.location = 'admin.php?page=mh-forms'">Go To Forms</button>
+	        </div>
+          <div class="zmhauthenticatebox">
+	            <img src="<?php echo esc_url( plugins_url('../assets/images/zc-wa-ecommerce.svg', __FILE__ ) ); ?>">
+	            <h1 style="margin-top: 20px;">eCommerce</h1>
+	            <p>Connect your online store, send product promotional emails, and earn a greater return on your investment.</p>
+	            <button class="zmhbtn zmhpri zmhmb35" onclick="window.location = 'admin.php?page=mh-wc'">Go To Ecommerce</button>
 	        </div>
 	    </div>
 	</div>

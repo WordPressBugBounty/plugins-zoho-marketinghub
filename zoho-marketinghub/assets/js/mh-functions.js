@@ -29,7 +29,7 @@ var changevalue = function(selectedvalue) {
             jQuery('#global').addClass("zcicon-radiobox-marked");
             jQuery("#pageList").slideUp();
             jQuery("#postList").slideUp();
-           
+
         } else if(selectedvalue == 'specific') {
             jQuery("#zmhub_code_loc").attr("value",'specific');
             if(jQuery("#Cateogry").is(":visible"))
@@ -44,14 +44,14 @@ var changevalue = function(selectedvalue) {
                         jQuery('#selectpo').fadeIn();
                     });
             }
-            
+
             jQuery('#specific').addClass("zcicon-radiobox-marked");
             jQuery('#specific').removeClass("zcicon-radiobox-blank");
             jQuery('#Cat').removeClass("zcicon-radiobox-marked");
             jQuery('#Cat').addClass("zcicon-radiobox-blank");
             jQuery('#global').removeClass("zcicon-radiobox-marked");
             jQuery('#global').addClass("zcicon-radiobox-blank");
-            
+
         }
         else if(selectedvalue == 'cateogry'){
             jQuery("#zmhub_code_loc").attr("value",'cateogry');
@@ -74,7 +74,7 @@ var changevalue = function(selectedvalue) {
             jQuery('#global').addClass("zcicon-radiobox-blank");
             jQuery("#pageList").slideUp();
             jQuery("#postList").slideUp();
-           
+
         }
 
     }
@@ -126,7 +126,7 @@ var changevalue = function(selectedvalue) {
         var content = "";
         var countlen =0;
         var sellen = 0;
-        content = '<div id="copy_'+Id+'"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content(\''+type+'\','+Id+')"></i></span>'+name+'</div>'; 
+        content = '<div id="copy_'+Id+'"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content(\''+type+'\','+Id+')"></i></span>'+name+'</div>';
         jQuery("#add_page_tracking_script_globalErr").html('');
         if(type == 'post')
         {
@@ -138,14 +138,14 @@ var changevalue = function(selectedvalue) {
                 jQuery("#postList").find("#"+Id).attr('visible','false');
 
                var post_value = jQuery("#zmhub_postvalue").attr('value');
-                if(post_value == "")  
+                if(post_value == "")
                 {
-                     jQuery("#zmhub_postvalue").attr('value',+Id); 
+                     jQuery("#zmhub_postvalue").attr('value',+Id);
                 }
                 else
                 {
-                    post_value = post_value+','+Id ; 
-                     jQuery("#zmhub_postvalue").attr('value',post_value); 
+                    post_value = post_value+','+Id ;
+                     jQuery("#zmhub_postvalue").attr('value',post_value);
                 }
                 countlen = jQuery("#searchposts").find("li").length;
                 sellen = jQuery("#zmhub_postvalue").attr('value').split(',').length;
@@ -157,7 +157,7 @@ var changevalue = function(selectedvalue) {
             else{
                 alert("You cannot track more than 10 posts.");
             }
-            
+
         }
         else if(type == 'page')
         {
@@ -167,15 +167,15 @@ var changevalue = function(selectedvalue) {
                 jQuery("#selectedpagelist").append(content);
                 jQuery("#pageList").find("#"+Id).hide();
                 jQuery("#pageList").find("#"+Id).attr('visible','false');
-                
+
                 var page_value = jQuery("#zmhub_pagevalue").attr('value');
-                if(page_value == "")  
+                if(page_value == "")
                 {
-                     jQuery("#zmhub_pagevalue").attr('value',+Id); 
+                     jQuery("#zmhub_pagevalue").attr('value',+Id);
                 }
                 else
                 {
-                     jQuery("#zmhub_pagevalue").attr('value',page_value+','+Id); 
+                     jQuery("#zmhub_pagevalue").attr('value',page_value+','+Id);
                 }
                 countlen = jQuery("#searchpages").find("li").length;
                 sellen = jQuery("#zmhub_pagevalue").attr('value').split(',').length;
@@ -205,7 +205,7 @@ var changevalue = function(selectedvalue) {
         }
         else if(type == 'page')
         {
-            jQuery("#pageList").find("#"+Id).fadeIn(); 
+            jQuery("#pageList").find("#"+Id).fadeIn();
             jQuery("#pageList").find("#"+Id).attr('visible','true');
             jQuery("#selectedpagelist").find("#copy_"+Id).remove();
             var pagevalue = jQuery("#zmhub_pagevalue").attr('value').replace(Id+',','').replace(','+Id,'').replace(Id,'');
@@ -227,7 +227,7 @@ var changevalue = function(selectedvalue) {
     {
         if(jQuery("#wa_status").hasClass("sel"))
         {
-            
+
             jQuery("#webAutoStatusPopup").fadeIn();
             // jQuery("#wa_body").css("z-index",-1);
             // jQuery("#wa_body").css("opacity",0.5);
@@ -258,6 +258,7 @@ var changevalue = function(selectedvalue) {
         jQuery('.zmhsignformlst').removeClass('popupopen');
         jQuery("#wa_body").removeClass('popupopen');
         jQuery('#mh_disconnect_popup').slideUp();
+        jQuery('#zmhwc_disconnect_popup').slideUp();
         jQuery(".zmhcontaainer").removeClass('popupopen');
 
     }
@@ -266,7 +267,7 @@ var changevalue = function(selectedvalue) {
     {
         if(val == 1)
         {
-            
+
             jQuery("#ldsubmit").attr("value","cancel");
             jQuery("#zmhub_form").submit();
         }
@@ -301,7 +302,7 @@ var changevalue = function(selectedvalue) {
             //jQuery("#zmhub_form").submit();
             }
         }
-        
+
     }
 
     // function saveWaSettings()
@@ -323,7 +324,7 @@ var changevalue = function(selectedvalue) {
     var lielem_len = jQuery("#"+id).find("li").length;
     for(i=1;i<lielem_len;i++)
     {
-        if(jQuery(jQuery("#"+id).find("li")[i]).attr("visible")!="false") 
+        if(jQuery(jQuery("#"+id).find("li")[i]).attr("visible")!="false")
         {
             if(jQuery(jQuery("#"+id).find("li")[i]).text().toLowerCase().indexOf(ele.value.toLowerCase())!==-1)
             {
@@ -344,7 +345,7 @@ var changevalue = function(selectedvalue) {
         jQuery("#success_msg").show();
         setTimeout(function() {
             jQuery("#success_msg").hide();
-        }, 5000); 
+        }, 5000);
     }
 
     function copyToClipboard(text) {
@@ -391,3 +392,9 @@ var changevalue = function(selectedvalue) {
         jQuery('.greenband').find("p").text("");
         jQuery('.red').find("p").text("");
     }
+   function zmhub_setvalue(key,val)
+   {
+       jQuery("#zmhub_list").attr("value",key);
+       jQuery("#zmhub_list").text(val);
+
+   }

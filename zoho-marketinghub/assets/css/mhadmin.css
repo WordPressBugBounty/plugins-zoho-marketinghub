@@ -162,13 +162,13 @@ input[readonly]{
 }
 
 .zmhpri {
-    background-color: #ff6f61;
-    border: solid 1px #f5443e;
+    background-color: #5b6fe8;
+    border: solid 1px #5b6fe8;
     color: #fff !important;
 }
 
 .zmhpri:hover {
-    background-color: #ff6f61;
+    background-color: #5b6fe8;
     transition: all .3s;
     box-shadow: 0 14px 26px -12px rgba(157, 174, 196, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(157, 174, 196, .2);
 }
@@ -179,12 +179,12 @@ input[readonly]{
 }
 
 .zmhauthenticatebox {
-    width: 35%;
+    width: 30%;
     float: left;
     background-color: #ffffff;
     border: 1px solid #e6ecf2;
     border-radius: 5px;
-    margin: 2% 7.5%
+    margin: 2% 0.5%
 }
 
 .zmhauthenticatebox h1 {
@@ -624,11 +624,11 @@ input[readonly]{
     animation-duration: 200ms;
     -webkit-transition: .28s ease;
     transition: .28s ease;
-    background-color: #f5443e;
+    background-color: #5b6fe8;
 }
 
 .zmhradio input[type="radio"]:checked+label:before {
-    border: 2px solid #f5443e;
+    border: 2px solid #5b6fe8;
 }
 
 .zmhradio input[type="radio"]:disabled+label {
@@ -827,7 +827,7 @@ input[readonly]{
 }
 
 .zmhcheckbox input[type="checkbox"]:checked+label:before {
-    border: 2px solid #f5443e;
+    border: 2px solid #5b6fe8;
 }
 
 .zmhcheckbox input[type="checkbox"] {
@@ -857,8 +857,8 @@ input[readonly]{
     animation-duration: 200ms;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
-    border-right: 2px solid #f5443e;
-    border-top: 2px solid #f5443e;
+    border-right: 2px solid #5b6fe8;
+    border-top: 2px solid #5b6fe8;
 }
 
 .zmhcheckbox input[type="checkbox"]:disabled+label {
@@ -1473,7 +1473,7 @@ margin-left:250px;
 }
 
 .zmhbtnonoff.zhmtoglabon span {
-    background: #3fafdae6
+    background: #5b6fe8
 }
 
 .zmhbtnonoff span:before {
@@ -1549,4 +1549,272 @@ span.reqird {
     padding: 0;
     position: absolute;
     right: 0px;
+}
+.zcbigwizrdcont { width: 100%; text-align: center; }
+
+        .zcbigwizrd {
+            margin: 0 auto;
+            height: 40px;
+            display: inline-block;
+        }
+
+        .zcbwpoint {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            display: block;
+            float: left;
+        }
+
+        .zcbwline {
+            width: 200px;
+            height: 3px;
+            display: block;
+            background-color: #dce3e6;
+            float: left;
+            position: relative;
+            top: 13px;
+        }
+
+        .zcbwline.active {
+            background-color: #5b6fe8;
+        }
+
+        .zcbwpoint:after {
+            width: 28px;
+            height: 28px;
+            background-color: #ffffff;
+            content: '';
+            border-radius: 50%;
+            box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.16);
+            position: absolute;
+            top: 0;
+            display: none;
+        }
+
+        .zcbwpoint:after {
+            display: block;
+        }
+
+        .zcbwpoint:before {
+            width: 18px;
+            height: 18px;
+            background-color: #dce3e6;
+            content: '';
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            z-index: 9;
+            top: 5px;
+            left: 5px;
+        }
+
+        .zcbwpoint.active:before {
+            background-color: #5b6fe8;
+        }
+
+        .zcbwstage {
+            display: block;
+            position: relative;
+            width: 150px;
+            left: -61px;
+            top: 30px;
+            text-align: center;
+        }
+
+        .zcbwstage span {
+            font-size: 14px;
+        }
+
+        .zcbwpoint.active .zcbwstage span {
+            color: #5b6fe8;
+        }
+
+        .zmhauthenticatinr {
+    width: calc(100% - 300px);
+    float: left;
+}
+
+.zmhauthenticatinr h1 {
+    font-size: 16px;
+    font-weight: 700;
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.zmhauthenticatinr p {
+    font-size: 14px;
+    line-height: 28px;
+    float: left;
+    text-align: left;
+    margin: 0px 0 0;
+    width: 100%;
+}
+.zcplulogomsg {
+    width: calc(100% - 170px);
+    float: left;
+}
+
+.zmhauthenticatinbtn {
+    margin-top: 15px;
+    float: left;
+}
+
+.zcsyncrotate{
+width: 50px;
+height: 50px;
+background-color: #FF9330;
+left: 46%;
+top: 7px;
+animation-duration: 500ms;
+animation-iteration-count: infinite;
+animation-name: spin;
+animation-timing-function: linear;
+padding: 10px;}
+
+.zcsynctick{width: 50px;
+height: 50px;
+background-color: #7ACC4F;
+left: 46%;
+top: 7px;}
+
+.zcsyncstop{width: 50px;
+height: 50px;
+background-color:#DF4B4D;
+left: 46%;
+top: 7px;}
+
+.zcbox {
+    border: solid 1px #e4ecf1;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.zcoptsetig {
+    width: 100%;
+    float: left;
+}
+
+.zslrgtext {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.zcoptsetvalcot {
+    width: 100%;
+    float: left;
+}
+
+.zcoptsetval {
+    width: 50%;
+    float: left;
+    margin: 10px 0;
+    padding-left: 15px;
+}
+
+.zcoptsetval h2 {
+    font-size: 16px;
+    font-weight: 400;
+
+    margin: 0 0 10px;
+}
+
+.zcoptsetval p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.zcoptsetval textarea {
+    width: 80%;
+    height: 70px;
+    padding: 8px;
+    font-family:inherit;
+
+}
+
+.zcoptsetval textarea:focus{
+    padding: 8px;
+}
+.zcoptsetval span {
+    font-size: 12px;
+    color: #5e5e5e;
+    width: 100%;
+    display: block;
+    float: left;
+    margin-top:5px;
+}
+
+.zcoptsetval input {
+    width: 80%;
+    height: 45px;
+    float: left;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.zcoptsetval select{
+    width: 80%;
+    height: 45px;
+    float: left;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.zcpwrmsg{
+        width: 96%;
+    padding: 5px 10px;
+    background-color: #fb1717;
+    margin: 0 2% 3%;
+}
+
+.zcpwrmsg i{
+    color: #fff;
+    float: left;
+    font-size: 24px;
+}
+
+.zcpwrmsg p{
+margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    color: #fff;
+    margin-left: 30px;
+    width: calc(100% - 30px);
+}
+
+.zcbtdis{
+    opacity: .3;
+    pointer-events: none;
+}
+
+@-ms-keyframes spin {
+ from { -ms-transform: rotate(0deg); }
+ to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+ from { -moz-transform: rotate(0deg); }
+ to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+ from { -webkit-transform: rotate(0deg); }
+ to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+ from {
+ transform:rotate(0deg);
+ }
+ to {
+ transform:rotate(360deg);
+ }
 }

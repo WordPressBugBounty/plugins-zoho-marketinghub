@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! current_user_can( 'manage_options' ) ) {
      die();
 }
@@ -27,8 +27,8 @@ if ( ! current_user_can( 'manage_options' ) ) {
         <p></p>
         <button><img src="<?php echo esc_url( plugins_url('../assets/images/close.svg', __FILE__ ) ); ?>"></button>
     </div>
-<?php 
-echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . wp_create_nonce( 'mh-ajax-nonce' ) . '" />';
+<?php
+echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . esc_html(wp_create_nonce( 'mh-ajax-nonce' )) . '" />';
 global $wpdb, $table_prefix;
 $tblname = $table_prefix . 'zmhub_forms';
 $sql = "SELECT * FROM $tblname WHERE id > 0 and status != 0 ORDER BY created_time DESC";
@@ -90,7 +90,7 @@ if( !$allforms) { ?>
                             <span class="<?php if($singleform['status'] == 2) echo "active"; else if($singleform['status'] == 1) echo "inactive"; else if($singleform['status'] == 3) echo "hidden"; ?>"></span>
                             <span><?php if($singleform['status'] == 2) echo "Visible"; else if($singleform['status'] == 1) echo "Not used";  else if($singleform['status'] == 3) echo "Hidden"; ?></span>
                             <span>|</span>
-                            <span>Created on <?php echo get_date_from_gmt( date( 'Y-m-d H:i:s', substr($singleform['created_time'], 0 , -3)), get_option('date_format')); ?></span>
+                            <span>Created on <?php echo esc_html(get_date_from_gmt( date( 'Y-m-d H:i:s', substr($singleform['created_time'], 0 , -3)), get_option('date_format'))); ?></span>
                             <div class="zmhformtogche animOff" style ="display: <?php if($singleform['status'] == 2 || $singleform['status'] == 3) echo 'block;'; else echo 'none;';?>"><label class="zmhcodechecklab mhlab animOff <?php if($singleform['status'] == 2) echo "active"?>" mhid="<?php echo esc_html($singleform['id'])?>"></label></div>
                         </p>
                     </div>
@@ -103,7 +103,7 @@ if( !$allforms) { ?>
                     <div class="zmhsigfomdetinr">
                         <span>Short Code</span>
                         <?php if($singleform['status'] == 2 || $singleform['status'] == 3) {?>
-                        <span>[zmauto id = <?php echo esc_html($singleform['id']) ?>]</span> 
+                        <span>[zmauto id = <?php echo esc_html($singleform['id']) ?>]</span>
                     <?php } else { ?>
                         <span class="mh_sc animOff" style= "background-color: transparent;color: #009ad5;cursor: pointer; text-decoration: underline;" mhid="<?php echo esc_html($singleform['id'])?>" >Click to generate</span>  <?php }?>
                         <button data-balloon="Copy code" data-balloon-pos="up" style ="display: <?php if($singleform['status'] == 2 || $singleform['status'] == 3) echo 'block;'; else echo 'none;';?>"><img class="animOff mhclip" src="<?php echo esc_url( plugins_url('../assets/images/code-copy.svg', __FILE__ ) ); ?>" mhtext="[zmauto id = <?php echo esc_html($singleform['id']) ?>]"></button>

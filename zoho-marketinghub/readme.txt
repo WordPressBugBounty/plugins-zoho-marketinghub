@@ -2,17 +2,17 @@
 Contributors:Zoho Campaigns
 Tags: marketing hub, website tracking, web analytics, sign-up form, automation
 Requires at least: 5.1.1
-Tested up to: 6.6.1
+Tested up to: 6.7
 Requires PHP: 5.2.4
-Stable tag: 1.2.8
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Zoho Marketing Automation is an all-in-one marketing automation software that helps you successfully manage your marketing activities across multiple channels. Generate, nurture, and qualify more leads into customers, at the same time, retaining them as loyal customers.
+Zoho Marketing Automation is an all-in-one marketing automation software that helps you successfully manage your marketing activities across multiple channels. It allows you to generate, nurture, and qualify more leads into customers while also retaining them as loyal customers.
 
-Using the Zoho Marketing Automation plugin, analyze your website visitor’s behaviour and activities, and convert them into leads by embedding signup forms on your web pages.
+Using the Zoho Marketing Automation plugin, you can analyze your website visitors’ behavior and activities, convert them into leads by embedding signup forms on your web pages, and utilize the new eCommerce integration to monitor shopping activities and boost conversions.
 
 With the Zoho Marketing Automation plugin, you can add:
 
@@ -29,6 +29,12 @@ Embed signup forms to your WordPress site and entice your web visitors to sign u
 
 * You can fetch these signup forms from your Marketing Automation account and embed them on your site using short codes.
 * Instantly show or hide a signup form on your site through a control within WordPress.
+
+= eCommerce =
+
+Seamlessly transfer your WooCommerce store data to Marketing Automation 2.0 with simple integration methods. Start sending targeted emails, automate your ecommerce activities and personalize your marketing efforts with the help of MA 2.0 after you connect your WooCommerce store.
+
+Once the integration is complete, you can start utilizing the powerful features of MA 2.0 to boost your ecommerce activities and increase your sales. So why wait? Connect your store with MA 2.0 today and take your ecommerce game to the next level.
 
 == Installation ==
 
@@ -50,8 +56,25 @@ For basic usage, you can also have a look at the [plugin web site](https://help.
 1. screenshot-1.jpg
 2. screenshot-2.jpg
 3. screenshot-3.jpg
+4. screenshot-4.jpg
+5  screenshot-5.jpg
+6  screenshot-6.jpg
+7  screenshot-7.jpg
+8  screenshot-8.jpg
+9  screenshot-9.jpg
 
 == Changelog ==
+
+= 1.3.1 =
+*Release Date - 02 April, 2025*
+
+* Issue Fix
+
+= 1.3.0 =
+*Release Date - 02 April, 2025*
+
+* WooCommerce Integration
+* Security Fix
 
 = 1.2.8 =
 *Release Date - 25 July, 2024*

@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if ( ! current_user_can( 'manage_options' ) ) {
      die();
 }
@@ -6,7 +6,7 @@ if ( ! current_user_can( 'manage_options' ) ) {
 
 <div class="zmhtit">
     <img src="<?php echo esc_url( plugins_url('../assets/images/MHL_01B.svg', __FILE__ ) ); ?>">
-        <h1>Zoho Marketing Automation - Web Assistant</h1>
+        <h1>Zoho Marketing Automation - Website Analytics</h1>
     </div>
 
     <div class="zhmalertmsg greenband" style="display:none">
@@ -22,15 +22,15 @@ if ( ! current_user_can( 'manage_options' ) ) {
         <p>Settings has been saved successfully.</p>
     </div>
 <?php
-echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . wp_create_nonce( 'mh-ajax-nonce' ) . '" />';
+echo '<input type="hidden" name="mh-ajax-nonce" id="mh-ajax-nonce" value="' . esc_html(wp_create_nonce( 'mh-ajax-nonce' )) . '" />';
 $mh_script = esc_html(trim(get_option('zmhub_script')));
 if(!$mh_script) { ?>
 <div id="mhstart">
     <div class="zmhcontainer">
         <div class="zmhsignupland">
             <img src="<?php echo esc_url( plugins_url('../assets/images/zc-wa-empty.svg', __FILE__ ) ); ?>">
-            <h1>Web Assistant</h1>
-            <p>Get the Web Assistant tracking code from your Zoho Marketing Automation account to track your pages and posts.</p>
+            <h1>Website Analytics</h1>
+            <p>Get the Website Analytics tracking code from your Zoho Marketing Automation account to track your pages and posts.</p>
             <div class="zmhbtncont">
                 <input type="button" id="getCode" class="zmhbtn zmhpri" value="Get Code">
                 <div class="zhmworcont" style="display: none;">
@@ -57,7 +57,7 @@ else { if(isset($_GET['saved'])){
       }
     }
    $page_scripts = ''; if(get_option('zmhub_script_setting')){
-    $page_scripts =unserialize(get_option('zmhub_script_setting')); } 
+    $page_scripts =unserialize(get_option('zmhub_script_setting')); }
     else {?> <script>mh_success_msg("Code fetched from Automation. Save your settings here. Only then your pages and posts will be tracked.");</script> <?php }?>
 <div class="zmhpopupgen" id="webAutoStatusPopup" style="display: none;">
         <div class="">
@@ -72,16 +72,16 @@ else { if(isset($_GET['saved'])){
 
 <div style="margin-left:-20px; position: relative; " id="wa_body">
 <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" id="zmhub_form" >
-            <input type="hidden" name="action" value="zmhub_save_settings"> 
+            <input type="hidden" name="action" value="zmhub_save_settings">
             <div class=" p40" style="position: relative; z-index: 1;">
-            <div class="tc" style="margin: 80px 0 20px;float: left;width: 90%;">Monitor the activities in your web pages and posts, and analyze their performance using the web assistant tracking code.</div>
+            <div class="tc" style="margin: 80px 0 20px;float: left;width: 90%;">Monitor the activities in your web pages and posts, and analyze their performance using the website analytics tracking code.</div>
             <div class="cmpfrm uslct w70 mt50" id ="zcwp_page" style="display:<?php if(!$mh_script){ echo "none";} ?>">
-                
+
                    <ul>
                   <li class="vt" style="width: 170px;"><label>Tracking code</label></li>
                   <li>
                   <div id="test" style="position:relative">
-                  <textarea class="w100" id="mhsnippet" name="mhsnippet" style="align-content:center; font-family: monospace; font-size: 16px;" readonly="true"><?php echo preg_replace('/\s+/', '', trim($mh_script)); ?></textarea>
+                  <textarea class="w100" id="mhsnippet" name="mhsnippet" style="align-content:center; font-family: monospace; font-size: 16px;" readonly="true"><?php echo esc_js(preg_replace('/\s+/', '', trim($mh_script))); ?></textarea>
                   </div>
                   <div class="errdiv mt5" id="testErr" style="display: none;">Please paste your code snippet</div>
                   </li>
@@ -109,13 +109,13 @@ else { if(isset($_GET['saved'])){
                         <span class="ml30">
                        <i class="zcicon-radiobox-blank vm" value ="specific" id = "specific" onclick="changevalue('specific')"></i> <span style="vertical-align: middle;">Specific pages and posts</span></span>
                         <span class="ml30"> <i class="zcicon-radiobox-blank vm" value ="cateogry" id ="Cat" onclick="changevalue('cateogry')"></i> <span style="vertical-align: middle;">Specific category of posts</span></span>
-                        <?php } ?>  
+                        <?php } ?>
                          <?php $var =  $page_scripts['zmhub_code_loc']; if(!strcmp($var,'specific')) { ?>
                         <i class="zcicon-radiobox-blank vm"  value ="global" id = "global" onclick="changevalue('global')"></i> <span style="vertical-align: middle;">All pages and posts</span>
                         <span class="ml30">
                         <i class="zcicon-radiobox-marked vm"  value ="specific" id ="specific" onclick="changevalue('specific')" ></i> <span style="vertical-align: middle;">Specific pages and posts</span></span>
                         <span class="ml30"><i class="zcicon-radiobox-blank vm"  value ="cateogry" id ="Cat"  onclick="changevalue('cateogry')"></i> <span style="vertical-align: middle;">Specific category of posts</span></span>
-                        <?php } ?> 
+                        <?php } ?>
                         <?php $var =  $page_scripts['zmhub_code_loc']; if(!strcmp($var,'cateogry')) { ?>
                         <i class="zcicon-radiobox-blank vm" value ="global" id = "global" onclick="changevalue('global')"></i> <span style="vertical-align: middle;">All pages and posts</span>
                        <span class="ml30">
@@ -126,7 +126,7 @@ else { if(isset($_GET['saved'])){
                             <span class="ml30">
                             <i class="zcicon-radiobox-blank vm" value ="specific" id = "specific" onclick="changevalue('specific')"></i> <span style="vertical-align: middle;">Specific pages and posts</span></span>
                             <span class="ml30"> <i class="zcicon-radiobox-blank vm" value ="cateogry" id ="Cat" onclick="changevalue('cateogry')"></i> <span style="vertical-align: middle;">Specific category of posts</span></span>
-                        <?php }?>     
+                        <?php }?>
                         <input type="hidden" name="zmhub_code_loc" id = "zmhub_code_loc" value= '<?php if($page_scripts && isset($page_scripts['zmhub_code_loc'])) { echo esc_html($page_scripts['zmhub_code_loc']);} else echo esc_html("global"); ?>'>
                         <input type="hidden" name="zmhub_postvalue" id = "zmhub_postvalue" value= '<?php if($page_scripts && isset($page_scripts['zmhub_postvalue']) && $page_scripts['zmhub_postvalue'] !=0) { echo esc_html($page_scripts['zmhub_postvalue']);} else echo ""; ?>'>
                         <input type="hidden" name="zmhub_pagevalue" id = "zmhub_pagevalue" value= '<?php if($page_scripts && isset($page_scripts['zmhub_pagevalue']) && $page_scripts['zmhub_pagevalue'] !=0) { echo esc_html($page_scripts['zmhub_pagevalue']);} else echo ""; ?>'>
@@ -142,7 +142,7 @@ else { if(isset($_GET['saved'])){
                    <ul id="selectpo" style="display:none;">
                   <li><label>Content type<span class="reqird">*</span></label></li>
                   <li>
-                  <div><i class="zcicon-checkbox-blank-outline vm" id ="pagebutton" onclick="showpage(this)"></i> 
+                  <div><i class="zcicon-checkbox-blank-outline vm" id ="pagebutton" onclick="showpage(this)"></i>
                  <span style="vertical-align: middle;">&nbsp;Pages</span>
                 </div>
                   <div  id = "selectedpage" style="display:none; background-color: #fff;" >
@@ -150,19 +150,19 @@ else { if(isset($_GET['saved'])){
                           <li class="vt"><label></label></li>
                           <li><div class="w100">
                            <ul class="mlslct">
-                           <li id="selectedpagelist">   
+                           <li id="selectedpagelist">
                             <?php $pagesId[] =""; if($page_scripts && isset($page_scripts['zmhub_pagevalue'])  && $page_scripts['zmhub_pagevalue'] !=0) {
                                   $pagesId = explode(",", $page_scripts['zmhub_pagevalue']);
 
                                   foreach ($pagesId as $Id) { ?>
-                                     <div id="copy_<?php echo $Id; ?>"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content('page','<?php echo $Id; ?>')"></i></span><?php echo get_the_title($Id);?></div> 
-                                   <?php }}?>                 
+                                     <div id="copy_<?php echo esc_html($Id); ?>"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content('page','<?php echo esc_html($Id); ?>')"></i></span><?php echo esc_html(get_the_title(esc_html($Id)));?></div>
+                                   <?php }}?>
                            </li>
                            <li><input placeholder="Search pages" type="text" onclick= "showContent('pageList',event)" onkeyup="hglghttxt(this,'searchpages')"></li>
                             <div class="clr"></div>
                            </ul>
                            <div>
-                           </div> 
+                           </div>
                            </div></li>
                            <div class="clr"></div>
                   </ul>
@@ -170,7 +170,7 @@ else { if(isset($_GET['saved'])){
                               <div class="mlslctmlist" style="overflow-y:scroll;z-index:10">
                                   <div id="searchpages" class="drpdnmnulstcntr">
                                       <ul id="pagecheck">
-                                                     <?php 
+                                                     <?php
                                                        $args = array(
                                                         'post_type' => 'page',
                                                         'posts_per_page' => -1,
@@ -183,18 +183,18 @@ else { if(isset($_GET['saved'])){
                                                     $position = 0;?>
                                                     <li visible = "false" style="display:none"><?php echo "No matches found";?> </li>
                                                    <?php
-                                                    while($wa_post_list->have_posts()) : $wa_post_list->the_post(); 
+                                                    while($wa_post_list->have_posts()) : $wa_post_list->the_post();
                                                     ?>
-                                                    <li value="<?php echo get_the_ID();?>" count="<?php echo $count_pages->publish; ?>" visible = "true" onclick="select_Content(<?php echo get_the_ID(); ?>,'<?php echo get_the_title();?>','page',event)" id="<?php echo get_the_ID(); ?>"> <?php echo ucwords(get_the_title()); ?></li>
-                                                    <?php 
+                                                    <li value="<?php echo esc_html(get_the_ID());?>" count="<?php echo esc_html($count_pages->publish); ?>" visible = "true" onclick="select_Content(<?php echo esc_html(get_the_ID()); ?>,'<?php echo esc_html(get_the_title());?>','page',event)" id="<?php echo esc_html(get_the_ID()); ?>"> <?php echo esc_html(ucwords(esc_html(get_the_title()))); ?></li>
+                                                    <?php
                                                     if (in_array(get_the_ID(), $pagesId))
                                                           { ?>
-                                                          <script> 
-                                                          jQuery("#<?php echo get_the_ID();?>").hide(); 
-                                                          jQuery("#<?php echo get_the_ID();?>").attr("visible","false");
+                                                          <script>
+                                                          jQuery("#<?php echo esc_html(get_the_ID());?>").hide();
+                                                          jQuery("#<?php echo esc_html(get_the_ID());?>").attr("visible","false");
                                                           </script>
-                                                    <?php  
-                                                    $position++; } endwhile;  ?>  
+                                                    <?php
+                                                    $position++; } endwhile;  ?>
                                       </ul>
                                   </div>
                                   <div class="bdrbtm"></div>
@@ -213,22 +213,22 @@ else { if(isset($_GET['saved'])){
                                   $postsId = explode(",", $page_scripts['zmhub_postvalue']);
 
                                   foreach ($postsId as $Id) { ?>
-                                     <div id="copy_<?php echo $Id; ?>"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content('post','<?php echo $Id; ?>')"></i></span><?php echo get_the_title($Id);?></div> 
+                                     <div id="copy_<?php echo esc_html($Id); ?>"><span> <i class= "zcicon-closex fr f18 csrpntr" onclick="remove_Content('post','<?php echo esc_html($Id); ?>')"></i></span><?php echo esc_html(get_the_title(esc_html($Id)));?></div>
                                    <?php }}?>
                                  </li>
                                  <li><input placeholder="Search posts" type="text" onclick = "showContent('postList',event)" onkeyup="hglghttxt(this,'searchposts')"></li>
                                   <div class="clr"></div>
                                  </ul>
                                  <div>
-                                 </div> 
+                                 </div>
                                  </div></li>
                         </ul>
                         <div class="rel allfltrdrpdwns" id="postList" style="display:none;height:40px;margin-top:-6px;">
                               <div class="mlslctmlist" style="overflow-y:scroll;z-index:10">
                                   <div id="searchposts" class="drpdnmnulstcntr">
-                                      <ul>           
-                                                  <?php 
-                                                  $count_pages = wp_count_posts(); 
+                                      <ul>
+                                                  <?php
+                                                  $count_pages = wp_count_posts();
                                                        $args = array(
                                                         'post_type' => 'post',
                                                         'posts_per_page' => -1,
@@ -237,25 +237,25 @@ else { if(isset($_GET['saved'])){
                                                         'post_status' => 'publish'
                                                     );
                                                     $wa_post_list = new WP_Query($args);
-                                                    
+
                                                     $position = 0; ?>
                                                     <li visible = "false" style="display:none"><?php echo "No matches found";?> </li>
-                                                    <?php while($wa_post_list->have_posts()) : $wa_post_list->the_post(); 
+                                                    <?php while($wa_post_list->have_posts()) : $wa_post_list->the_post();
                                                                                                        ?>
-                                                    <li value="<?php echo get_the_ID();?>" count="<?php echo $count_pages->publish; ?>" visible = "true" onclick="select_Content(<?php echo get_the_ID(); ?>,'<?php echo get_the_title();?>','post',event)" id="<?php echo get_the_ID(); ?>"> <?php echo ucwords(get_the_title()); ?></li>
+                                                    <li value="<?php echo esc_html(get_the_ID());?>" count="<?php echo esc_html($count_pages->publish); ?>" visible = "true" onclick="select_Content(<?php echo esc_html(get_the_ID()); ?>,'<?php echo esc_html(get_the_title());?>','post',event)" id="<?php echo esc_html(get_the_ID()); ?>"> <?php echo esc_html(ucwords(esc_html(get_the_title()))); ?></li>
                                                     <?php  if (in_array(get_the_ID(), $postsId))
                                                           { ?>
-                                                          <script> jQuery("#<?php echo get_the_ID();?>").hide();
-                                                                   jQuery("#<?php echo get_the_ID();?>").attr("visible","false");
+                                                          <script> jQuery("#<?php echo esc_html(get_the_ID());?>").hide();
+                                                                   jQuery("#<?php echo esc_html(get_the_ID());?>").attr("visible","false");
                                                           </script>
-                                                        <?php    $position++;  
-                                                          } endwhile; ?>                    
+                                                        <?php    $position++;
+                                                          } endwhile; ?>
                                       </ul>
                                   </div>
                                   <div class="bdrbtm"></div>
                               </div>
                           </div>
-                    </div> 
+                    </div>
                   </li>
                   </ul>
 
@@ -266,30 +266,30 @@ else { if(isset($_GET['saved'])){
                             <div class="drpdwnmnulst allfltrdrpdwns" style="z-index: 2; display:none;" id="postcateogry" >
                             <div class="drpdnmnulstcntr"><ul>
 
-                            <?php 
+                            <?php
                               $var ="";
                              if($page_scripts && isset($page_scripts['zmhub_cateogry'])) { $var =  $page_scripts['zmhub_cateogry']; ?>
 
-                              <script> 
-                                  jQuery("#catname").html('<?php echo $var ?>');
-                                  jQuery("#cateogrylist").attr("value",'<?php echo $var ?>');
-                                  jQuery("#zmhub_cateogry").attr("value",'<?php echo $var ?>');
+                              <script>
+                                  jQuery("#catname").html('<?php echo esc_html($var) ?>');
+                                  jQuery("#cateogrylist").attr("value",'<?php echo esc_html($var) ?>');
+                                  jQuery("#zmhub_cateogry").attr("value",'<?php echo esc_html($var) ?>');
                                 </script>
-                                
+
                             <?php } ?>
-                          
-              <?php 
+
+              <?php
                                 $wa_cateogries= get_categories( array(
                                 'orderby' => 'name',
                                 'order'   => 'ASC'
                                   ) );
                                // var_dump($wa_cateogries);
-                                foreach($wa_cateogries as $wa_cateogry) {    
+                                foreach($wa_cateogries as $wa_cateogry) {
                                     if($wa_cateogry->name != $var)
                                     {
-                                   
+
                             ?>
-                            <li value= "<?php echo $wa_cateogry->term_id;?>" id= "<?php echo $wa_cateogry->name; ?>" onclick="changeActionValue(this)"><a> <?php echo ucwords($wa_cateogry->name); ?></a></li>
+                            <li value= "<?php echo esc_html($wa_cateogry->term_id);?>" id= "<?php echo esc_html($wa_cateogry->name); ?>" onclick="changeActionValue(this)"><a> <?php echo esc_html(ucwords(esc_html($wa_cateogry->name))); ?></a></li>
                             <?php  }}?>
                             </ul></div></div>
                             </div></li>
@@ -301,7 +301,7 @@ else { if(isset($_GET['saved'])){
                 <div class="actionbg"><i class="zcicon-calendar f20 vm"></i></div>
                 <?php if($page_scripts && isset($page_scripts['zmhub_date'])) {
                     ?>
-                     <input type="text" id ="datepicker" class="datepicker" name="datepicker" autocomplete="off" readonly = "true" placeholder="Select date" value="<?php echo gmdate( get_option('date_format'), $page_scripts['zmhub_date']); ?>"/>
+                     <input type="text" id ="datepicker" class="datepicker" name="datepicker" autocomplete="off" readonly = "true" placeholder="Select date" value="<?php echo esc_html(gmdate( get_option('date_format'), $page_scripts['zmhub_date'])); ?>"/>
                 <?php  }
                  else { ?>
                 <input type="text" id ="datepicker" class="datepicker" name="datepicker" autocomplete="off" readonly = "true" value="" placeholder="Select date"/>
@@ -309,25 +309,25 @@ else { if(isset($_GET['saved'])){
         </div></li>
           </ul>
            <?php if($page_scripts) { $var =  $page_scripts['zmhub_code_loc']; if(!strcmp($var,'specific')) { ?>
-                  <script> 
+                  <script>
                     jQuery("#selectpo").show();
                     jQuery("#Date").hide();
                   </script>
                  <?php }?>
                   <?php if(isset($page_scripts['zmhub_pagevalue']) && $page_scripts['zmhub_pagevalue'] !=0) { ?>
-                  <script> 
+                  <script>
                     jQuery("#selectedpage").show();
                     jQuery("#pagebutton").removeClass("zcicon-checkbox-blank-outline").addClass("zcicon-checkbox-marked");
                   </script>
                  <?php }?>
                  <?php if(isset($page_scripts['zmhub_postvalue']) && $page_scripts['zmhub_postvalue'] != 0) { ?>
-                  <script> 
+                  <script>
                     jQuery("#selectedpost").show();
                     jQuery("#postbutton").removeClass("zcicon-checkbox-blank-outline").addClass("zcicon-checkbox-marked");
                   </script>
              <?php }?>
               <?php $var ='';  if(isset($page_scripts['zmhub_code_loc'])) $var = $page_scripts['zmhub_code_loc']; if(!strcmp($var,'cateogry')) { ?>
-                  <script> 
+                  <script>
                     jQuery("#Cateogry").show();
                   </script>
                  <?php } }?>
@@ -337,7 +337,7 @@ else { if(isset($_GET['saved'])){
                   <div class="mt40 tc w100 "> <button type ="button" id="zmhub_submit" value='save' class="zmhbtn zmhpri">Save
                   </button>  <button type ="button" class="zmhbtn zmhcan ml20" onclick="window.location = 'admin.php?page=mh-start'" value='cancel' >Cancel</button> </div>
                   </li>
-                  
+
                   </ul>
                   </div>
             </div>
