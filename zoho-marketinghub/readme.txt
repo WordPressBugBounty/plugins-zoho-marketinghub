@@ -4,7 +4,7 @@ Tags: marketing hub, website tracking, web analytics, sign-up form, automation
 Requires at least: 5.1.1
 Tested up to: 6.7
 Requires PHP: 5.2.4
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,13 +57,18 @@ For basic usage, you can also have a look at the [plugin web site](https://help.
 2. screenshot-2.jpg
 3. screenshot-3.jpg
 4. screenshot-4.jpg
-5  screenshot-5.jpg
-6  screenshot-6.jpg
-7  screenshot-7.jpg
-8  screenshot-8.jpg
-9  screenshot-9.jpg
+5. screenshot-5.jpg
+6. screenshot-6.jpg
+7. screenshot-7.jpg
+8. screenshot-8.jpg
+9. screenshot-9.jpg
 
 == Changelog ==
+
+= 1.3.2 =
+*Release Date - 02 April, 2025*
+
+* WooCommerce Integration for US,EU,IN,AU,JP & CA DC
 
 = 1.3.1 =
 *Release Date - 02 April, 2025*
