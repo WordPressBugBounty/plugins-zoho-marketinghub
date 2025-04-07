@@ -4,7 +4,7 @@ Tags: marketing hub, website tracking, web analytics, sign-up form, automation
 Requires at least: 5.1.1
 Tested up to: 6.7
 Requires PHP: 5.2.4
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,11 @@ For basic usage, you can also have a look at the [plugin web site](https://help.
 9. screenshot-9.jpg
 
 == Changelog ==
+
+= 1.3.4 =
+*Release Date - 07 April, 2025*
+
+* Web Analytics Issue Fix
 
 = 1.3.3 =
 *Release Date - 03 April, 2025*

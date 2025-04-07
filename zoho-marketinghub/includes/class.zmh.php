@@ -30,7 +30,7 @@ class ZohoMarketingHub {
 		        if($flag =='1' && $page_scripts['zmhub_code_loc'] != 'specific')
 		        {
 		            if($page_scripts['zmhub_code_loc'] == 'global')
-		                echo esc_js(stripslashes($mh_code));
+		                echo wp_specialchars_decode($mh_code);
 	                else if($page_scripts['zmhub_code_loc'] == 'cateogry' && !is_front_page())
 	                {
 	                    $mh_cat = get_the_category();
@@ -39,7 +39,7 @@ class ZohoMarketingHub {
 		                    foreach($mh_cat as $mh_cateogry) {
 			                   if(($mh_cateogry->name == $page_scripts['zmhub_cateogry']))
 			                   {
-			                   		echo esc_js(stripslashes($mh_code));
+			                   		 echo wp_specialchars_decode($mh_code);
 			                   		break;
 			                   }
 	                        }
@@ -53,13 +53,13 @@ class ZohoMarketingHub {
 	                 $postsId = explode(",", $page_scripts['zmhub_postvalue']);
 	                foreach($postsId as $Id) {
 	                 if(($Id == $post_id && !is_front_page())) {
-	                         echo esc_js(stripslashes($mh_code));
+	                          echo wp_specialchars_decode($mh_code);
 	                        break;
 	                    }
 	                }
 	                foreach ($pagesId as $Id) {
 	                 if(($Id == $post_id && !is_front_page())) {
-	                        echo esc_js(stripslashes($mh_code));
+	                         echo wp_specialchars_decode($mh_code);
 	                        break;
 	                    }
 	                }
