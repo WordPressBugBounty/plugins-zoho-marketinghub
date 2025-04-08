@@ -254,7 +254,7 @@ class ZohoMarketingHub_Admin {
 	            }
 		        if($mh_check == 1)
 		        {
-		        	$res = update_option('zmhub_script_setting', serialize($page_scripts),false);
+		        	$res = update_option('zmhub_script_setting_setting', serialize($page_scripts),false);
 		    		wp_safe_redirect(get_admin_url() .'admin.php?page=mh-wa&saved=true');
 		        }
 		        else{

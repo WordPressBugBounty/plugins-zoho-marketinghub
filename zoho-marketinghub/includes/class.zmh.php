@@ -205,7 +205,7 @@ class ZohoMarketingHub {
 	        {
 	        	$zmhub_cart_action = 'cart.deleted';
 	        }
-			if(od!="" && id!="")	{
+			if($od!="" && $id!="")	{
 				$headarray = array('Content-type' => 'application/json', 'x-wc-webhook-topic' => $zmhub_cart_action ,'x-wc-webhook-referer' => 'zoho marketing automation plugin', 'x-zohomarketingautomation-plugin-version' => ZMHUB_VERSION);
 				$query_string = http_build_query(['id' => $id, 'od' => $od]);
 				$hub_url = ZMHUB__HUB_URL;
