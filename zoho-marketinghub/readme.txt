@@ -2,9 +2,9 @@
 Contributors:Zoho Campaigns
 Tags: marketing hub, website tracking, web analytics, sign-up form, automation
 Requires at least: 5.1.1
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 5.2.4
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,12 @@ For basic usage, you can also have a look at the [plugin web site](https://help.
 9. screenshot-9.jpg
 
 == Changelog ==
+
+= 1.3.6 =
+*Release Date - 19 Jan, 2026*
+
+* WordPress 6.9 support
+
 = 1.3.5 =
 *Release Date - 08 April, 2025*
 
