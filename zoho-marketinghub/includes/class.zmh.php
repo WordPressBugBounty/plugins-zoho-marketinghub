@@ -140,7 +140,8 @@ class ZohoMarketingHub {
 	}
 	 public static function zmhub_init_hooks() {
  		self::$initiated = true;
- 		add_action('zmhub_track_order_event_hook', array('ZohoMarketingHub','zmhub_track_order_event_action'),10,2);
+ 		// zc_rid e-commerce conversion tracking disabled.
+ 		// add_action('zmhub_track_order_event_hook', array('ZohoMarketingHub','zmhub_track_order_event_action'),10,2);
  		/**
  		 * Add opt-in checkbox
  		 **/

@@ -413,7 +413,7 @@ class ZohoMarketingHub_Admin {
 		}
 		$response_body ='';
 		$details = json_encode(array("from" => $from, "count" => $count, "version" => 2));
-		$headarray = array('Authorization' => 'Zoho-oauthtoken '. self::zmhub_get_parsed_val('zmhub_token_details','access_token'), 'Content-Type' => 'application/json; charset=utf-8' );
+		$headarray = array('Authorization' => 'Zoho-oauthtoken '. self::zmhub_get_parsed_val('zmhub_token_details','access_token'), 'Content-Type' => 'application/json; charset=utf-8','X-WORKSPACE' => '-1' );
 		$hub_url = ZMHUB__HUB_URL;
 		if($zmhub_domname=='ca')	{
 				$hub_url = ZMHUB__HUB_URL_CA;
