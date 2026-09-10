@@ -121,17 +121,15 @@ class ZohoMarketingHub {
 	}
 	private static $initiated = false;
 	public static function zmhub_checkout_field_update_order_meta( $order_id ) {
-	  $current_user = wp_get_current_user();
-	   if($current_user != null)
-	   {
-        if(isset($_POST['zma_optin_checkbox']) && get_user_meta($current_user->ID, 'zma_newsletter_subscription', true) == '')
-         {
-            update_user_meta( $current_user->ID, 'zma_newsletter_subscription', true );
-         }
-           else {
-               update_user_meta( $current_user->ID, 'zma_newsletter_subscription', false );
-           }
-	   }
+	 $current_user = wp_get_current_user();
+	  if ( $current_user && ! empty( $current_user->ID ) ) {
+            // Only change subscription if the checkbox was actually submitted.
+            if ( array_key_exists( 'zma_optin_checkbox', $_POST ) ) {
+                $is_checked = ! empty( $_POST['zma_optin_checkbox'] );
+                update_user_meta( $current_user->ID, 'zma_newsletter_subscription', (bool) $is_checked );
+            }
+            // If the field is not in POST, keep the existing meta unchanged.
+       }
 	 }
 	 public static function zmhub_init() {
 		if (!self::$initiated) {

@@ -5,7 +5,7 @@
  * Uninstalling Zoho Marketing Automation deletes user data, settings, tables, and options.
  *
  * @package Zoho MarketingHub\Uninstaller
- * @version 1.3.7
+ * @version 1.3.8
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
